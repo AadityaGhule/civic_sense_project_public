@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue - Civic Issue Reporter</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-report">
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="brand">
+                <span class="material-icons-round">public</span> CivicReporter
+            </span>
+            <div class="nav-links">
+                <a href="map.html" class="nav-link"><span class="material-icons-round">map</span> View Map</a>
+                <button id="logout-btn" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="card form-card">
+            <header class="card-header">
+                <h2>New Report</h2>
+                <p>Help us fix the city by providing details below.</p>
+            </header>
+            
+            <form id="report-form">
+                <div class="form-group">
+                    <label class="input-label">1. Upload Evidence</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="issue-image" accept="image/*" required hidden>
+                        <label for="issue-image" class="file-drop-area">
+                            <span class="material-icons-round upload-icon">cloud_upload</span>
+                            <span class="upload-text">Tap to upload image</span>
+                        </label>
+                    </div>
+                    <div class="image-preview" id="image-preview">
+                        <!-- Preview injected via JS -->
+                    </div>
+
+                    <!-- AI Verification Status -->
+                    <div id="ai-verification-status" class="ai-status hidden">
+                        <div class="ai-loading hidden">
+                            <span class="spinner"></span> Analyzing image with Gemini AI...
+                        </div>
+                        <div class="ai-result hidden">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue-desc" class="input-label">2. Describe the Issue</label>
+                    <div class="input-wrapper">
+                        <textarea id="issue-desc" rows="3" placeholder="e.g. Large pothole on the corner of Main St." required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">3. Location</label>
+                    <div class="location-card">
+                        <div class="location-info">
+                            <span class="material-icons-round location-icon">my_location</span>
+                            <span id="location-status">Waiting for location...</span>
+                        </div>
+                        <button type="button" id="get-location-btn" class="btn btn-sm btn-secondary">
+                            Detect Location
+                        </button>
+                    </div>
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                    <span class="material-icons-round">send</span> Submit Report
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/gemini-api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

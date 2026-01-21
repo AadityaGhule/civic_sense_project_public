@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Issue Reporter | Improve Your City</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-landing">
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="material-icons-round">public</span>
+                CivicReporter
+            </a>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">Civic Responsibility</span>
+                <h1>Make Your City <br><span class="highlight">Better, Together.</span></h1>
+                <p class="hero-subtitle">Identify issues, report them instantly, and help authorities take action. Join the community movement for a cleaner, safer neighborhood.</p>
+                
+                <div id="login-section" class="cta-group">
+                    <button id="google-login-btn" class="btn btn-google">
+                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+                        <span>Continue with Google</span>
+                    </button>
+                    <p class="auth-note">Secure login powered by Google</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card floating">
+                    <span class="material-icons-round icon-lg">add_a_photo</span>
+                    <p>Snap a Photo</p>
+                </div>
+                <div class="visual-card floating delay-1">
+                    <span class="material-icons-round icon-lg">location_on</span>
+                    <p>Pin Location</p>
+                </div>
+                <div class="visual-card floating delay-2">
+                    <span class="material-icons-round icon-lg">done_all</span>
+                    <p>Get Resolved</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="feature-item">
+            <div class="icon-box"><span class="material-icons-round">camera_alt</span></div>
+            <h3>Report Instantly</h3>
+            <p>See a pothole or broken light? Snap a picture and upload it in seconds.</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon-box"><span class="material-icons-round">map</span></div>
+            <h3>Track Issues</h3>
+            <p>View all reported issues on a live map and track their status.</p>
+        </div>
+        <div class="feature-item">
+            <div class="icon-box"><span class="material-icons-round">volunteer_activism</span></div>
+            <h3>Community Driven</h3>
+            <p>Your reports help local authorities prioritize and fix problems faster.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Civic Issue Reporter. Built for Hackathon.</p>
+    </footer>
+
+    <!-- Firebase SDKs (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
